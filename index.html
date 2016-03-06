@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+
+<!-- include javascript libraries and css files -->
+
+<meta charset="utf-8">
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/handlebars-v3.0.3.js"></script>
+<title>Animals</title>
+
+<script src="js/bootstrap.min.js"></script>
+<script src="AnimalsData.js"></script>
+<script src="assignment.js"></script>
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="assignment.css" rel="stylesheet">
+
+</head>
+
+<body>
+	<div class="container">		<!-- container for whole page -->
+		<ul class="nav nav-tabs">  <!-- begin navigation bar -->
+			<li role="" id="nav-categories"><a href="#">Categories</a></li>
+			<li role="" id="nav-animals"><a href="#">Animals</a></li>
+		</ul>			<!-- end navigation bar -->
+
+		<div id="content" class="container-fluid" role="main">		<!-- content goes here -->
+		</div>
+	</div>		<!-- end container for whole page -->
+
+<script id="categories_template" type="text/x-handlebars-template">		<!-- // begin Categories Template -->
+
+	<div class="row-fluid">  	<!-- // Begin row for bootstrap grid -->
+		{{#each category}}		<!-- // Template iterator for category -->
+		<div class="col-xs-12 col-md-6 col-lg-3"> <!-- // Begin bootstrap grid columns -->
+			<div class="category-view" data-id="{{@index}}">  <!-- // begin category view -->
+				<h1 class="category-name">
+					<a href-"#">{{name}}</a>
+				</h1>
+				<p>{{animals.length}} animals</p>
+				<a href="#" class="thumbnail"><img src="{{animals.[0].image1}}" alt=""/></a>
+			</div>			<!-- // end category view -->
+		</div>  	<!-- // end bootstrap grid columns -->
+		{{/each}}	<!-- // end category iterator -->
+	</div>		<!-- //  end row for bootstrap grid -->
+
+</script>		<!-- end Categories Template -->
+
+<script id="animals_template" type="text/x-handlebars-template">		<!-- // begin Animals Template -->
+	<div class="row-fluid">  	<!-- // Begin row for bootstrap grid -->
+		{{#each animals}}		<!-- // Template iterator for animals -->
+		<div class="col-xs-12 col-md-6 col-lg-3">		<!-- // Begin bootstrap grid columns -->
+			<div class="details-view" data-id="{{@index}}">  <!-- // begin category view -->
+				<h3><a href="#">{{name}}</a></h3>
+				<a href="#" class="thumbnail"><img src="{{image1}}" alt=""/></a>
+			</div>
+		</div> 	<!-- // end bootstrap grid columns -->
+		{{/each}}		<!-- //end animals iterator -->
+	</div>		<!-- //  end row for bootstrap grid -->
+</script>		<!-- end Animals Template -->
+
+<script id="details_template" type="text/x-handlebars-template">		<!-- // begin Details Template -->
+	<div class="row">		<!-- // Begin row for bootstrap grid -->
+		<div class="col-xs-12 col-md-6 col-lg-6"> <!-- // Begin bootstrap grid columns -->
+			<h2 class="animal-name">{{name}}</h2>
+			<p class="description">{{description}}</p>
+		</div>
+		<div class="col-xs-12 col-md-6 col-lg-4">
+			<img class="large-img" src="{{image1}}"/>
+			<img class="large-img" src="{{image2}}"/>
+		</div>		<!-- // end bootstrap grid columns -->
+	</div>		<!-- //  end row for bootstrap grid -->
+</script>		<!-- // end Details Template -->
+
+<script id="alert-script" type="text/javascript">		
+
+<!-- // script to generate a popup explaining the site -->
+
+	$(document).ready(function() {
+		alert( "Hello! Welcome to my site about animals. You can select an animal by clicking on the links and/or images. Enjoy!");
+	});
+</script>
+
+</body>
+</html>

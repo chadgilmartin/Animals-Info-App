@@ -1,0 +1,13 @@
+/* put your css code here */
+.thumbnail img {
+	max-height:250px;
+	max-width:250px;
+}
+
+h1 {
+	height: 3em;
+}
+
+p {
+	font-size: 13px;
+}
